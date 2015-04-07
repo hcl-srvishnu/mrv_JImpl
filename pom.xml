@@ -3,4 +3,51 @@
   <groupId>com.mytest.mrv_JImpl</groupId>
   <artifactId>mrv_JImpl</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  
+  
+  <build>
+    <plugins>
+      <plugin>
+ 	    <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <version>2.10</version>
+        <executions>
+          <execution>
+            <id>unpack</id>
+            <phase>package</phase>
+            <goals>
+              <goal>unpack</goal>
+            </goals>
+            <configuration>
+            
+              <artifactItems>
+                <artifactItem>
+  <groupId>com.mytest.mrv_JImpl_Features</groupId>
+  <artifactId>mrv_JImpl_Features</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+                  <type>jar</type>
+                  <overWrite>false</overWrite>
+                  <outputDirectory>Precedent</outputDirectory>
+                  <destFileName>optional-new-name.jar</destFileName>
+                </artifactItem>
+              </artifactItems>
+              <overWriteReleases>true</overWriteReleases>
+              <overWriteSnapshots>true</overWriteSnapshots>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+  
+  
+  
+  <dependencies>
+  <dependency>
+  <groupId>com.mytest.mrv_JImpl_Features</groupId>
+  <artifactId>mrv_JImpl_Features</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  </dependency>
+  </dependencies>
+ 
 </project>
